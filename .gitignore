@@ -4,3 +4,4 @@ __pycache__
 *.komodoproject
 .komodotools
 activestate.yaml
+db.sqlite3
