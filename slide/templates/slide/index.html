@@ -1,0 +1,9 @@
+{% if latest_slideshow_list %}
+    <ul>
+    {% for slideshow in latest_slideshow_list %}
+        <li>{{ slideshow.date_published }} <a href="/slide/{{ slideshow.slug }}">{{ slideshow.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No slideshows are available.</p>
+{% endif %}
