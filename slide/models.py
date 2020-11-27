@@ -8,7 +8,7 @@ class Slideshow(models.Model):
     date_published = models.DateTimeField('date published')
     is_published = models.BooleanField()
     source = models.TextField()
-    options = models.JSONField()
+    # options = models.JSONField()
 
     def __str__(self):
         return self.name
