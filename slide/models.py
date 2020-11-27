@@ -1,6 +1,6 @@
 from django.db import models
 
-class Slideshow:
+class Slideshow(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=63)
     date_published = models.DateTimeField('date published')
@@ -8,3 +8,5 @@ class Slideshow:
     source = models.TextField()
     options = models.JSONField()
 
+    def __str__(self):
+        return self.name
