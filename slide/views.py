@@ -1,6 +1,4 @@
-from django.shortcuts import render
-from django.http import Http404
-from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render
 
 from .models import Slideshow
 
@@ -10,8 +8,5 @@ def index(request):
     return render(request, 'slide/index.html', context)
 
 def show(request, slug):
-    slideshow = Slideshow.objects.filter(slug=slug).first()
-    if slideshow:
-        return render(request, 'slide/show.html', {'slideshow': slideshow})
-    else:
-        raise Http404(f'No slideshow found at {slug}')
+    slideshow = get_object_or_404(Slideshow, slug=slug)
+    return render(request, 'slide/show.html', {'slideshow': slideshow})
