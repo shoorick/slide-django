@@ -1,0 +1,8 @@
+digraph G {
+
+    node [ shape=box, syle=filled, fillcolor=white ]
+
+    user -> slide -> share
+    user -> share
+
+}
