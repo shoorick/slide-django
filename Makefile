@@ -1,0 +1,2 @@
+server:
+	./manage.py runserver
