@@ -1,7 +1,8 @@
 {% if latest_slideshow_list %}
+    <h1>Most recent slideshows</h1>
     <ul>
     {% for slideshow in latest_slideshow_list %}
-        <li>{{ slideshow.date_published }} <a href="/slide/{{ slideshow.slug }}">{{ slideshow.name }}</a></li>
+        <li>{{ slideshow.date_published|date:'d.m.Y, H:i' }}. <a href="/slide/{{ slideshow.slug }}">{{ slideshow.name }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
