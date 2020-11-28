@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@400;700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+  color: #222324;
+  font-family: 'Roboto',sans-serif;
+}
+
+h1, h2, h3 {
+  color: #026;
+  font-family: 'Roboto Slab',serif;
+  font-weight: normal;
+}
+
+a {
+  color: #049;
+}
+
+a:visited {
+  color: #409;
+}
+
+.remark-container {
+    background: #ecedee;
+}
+
+.remark-code, .remark-inline-code {
+    font-family: 'Roboto Mono',monospace;
+}
+
+.remark-toolbar, .remark-toolbar-timer, .remark-notes-area .remark-bottom-area .remark-toggle {
+  font-family: 'Roboto',sans-serif !important;
+}
