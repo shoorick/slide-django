@@ -16,7 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from .views import redirect_to_slide_index
+
 urlpatterns = [
+    path('', redirect_to_slide_index),
     path('slide/', include('slide.urls')),
     path('admin/', admin.site.urls),
 ]
