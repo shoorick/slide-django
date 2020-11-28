@@ -2,8 +2,13 @@
 <html>
   <head>
     <title>{% block title %} Slideshow {% endblock %}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8">
     {% load static %}
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'icon/16.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'icon/32.png' %}">
+    <link rel="icon" type="image/png" sizes="160x160" href="{% static 'icon/160.png' %}">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="{% static 'icon/icon.svg' %}">
+    <link rel="apple-touch-icon" href="{% static 'icon/180.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'slide/style/susu.css' %}">
   </head>
   <body>
