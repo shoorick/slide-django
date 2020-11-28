@@ -1,10 +1,21 @@
-{% if latest_slideshow_list %}
-    <h1>Most recent slideshows</h1>
-    <ul>
-    {% for slideshow in latest_slideshow_list %}
-        <li>{{ slideshow.date_published|date:'d.m.Y, H:i' }}. <a href="{% url 'show' slideshow.slug %}">{{ slideshow.name }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No slideshows are available.</p>
-{% endif %}
+{% extends 'base_remark.html' %}
+
+{% block title %}
+    {% if latest_slideshow_list %}
+        Most recent slideshows
+    {% else %}
+        No slideshows are available
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    {% if latest_slideshow_list %}
+        # Most recent slideshows
+
+        {% for slideshow in latest_slideshow_list %}
+        - {{ slideshow.date_published|date:'d.m.Y, H:i' }}. [{{ slideshow.name }}]({% url 'show' slideshow.slug %})
+        {% endfor %}
+    {% else %}
+        # No slideshows are available
+    {% endif %}
+{% endblock %}
