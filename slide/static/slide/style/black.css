@@ -19,6 +19,12 @@ a:visited {
   color: #fe0;
 }
 
+mark {
+  background: #f90;
+  padding: 0 .25em;
+  margin: 0 -.25em;
+}
+
 .remark-container, .remark-slide-content {
   background: #000;
 }
