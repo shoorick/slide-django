@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,900;1,600;1,900&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: Montserrat,sans-serif;
+  font-weight: 600;
+}
+
+h1, h2, h3 {
+  font-weight: 900;
+}
+
+a {
+  color: #fc0;
+}
+
+a:visited {
+  color: #fe0;
+}
+
+.remark-container, .remark-slide-content {
+  background: #000;
+}
+
+.remark-notes-area {
+  background: #222;
+}
+
+.remark-code, .remark-inline-code {
+  font-family: 'Source Code Pro',monospace;
+}
+
+.remark-toolbar, .remark-toolbar-timer, .remark-notes-area .remark-bottom-area .remark-toggle {
+  font-family: Montserrat,sans-serif !important;
+  font-weight: 600 !important;
+}
