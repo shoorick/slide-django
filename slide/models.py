@@ -4,11 +4,11 @@ from django.utils import timezone
 
 class Slideshow(models.Model):
     name = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=63)
-    date_published = models.DateTimeField('date published')
-    is_published = models.BooleanField()
-    source = models.TextField()
-    # options = models.JSONField()
+    slug = models.SlugField(max_length=63, unique=True)
+    date_published = models.DateTimeField(default=timezone.now)
+    is_published = models.BooleanField(default=True)
+    source = models.TextField(verbose_name='Source code')
+    options = models.JSONField(null=True)
 
     def __str__(self):
         return self.name
