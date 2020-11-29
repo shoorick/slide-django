@@ -19,6 +19,13 @@ a:visited {
   color: #409;
 }
 
+mark {
+  margin: 0 -.1em;
+  padding: 0 .1em;
+  background: #fe0;
+  color: #000;
+}
+
 .remark-container {
     background: #ecedee;
 }
@@ -40,8 +47,6 @@ a:visited {
 }
 
 .inverse mark {
-  margin: 0 -.1em;
-  padding: 0 .1em;
   background: #900;
   color: #fff;
 }
