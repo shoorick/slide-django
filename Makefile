@@ -5,3 +5,6 @@ server:
 
 migrate:
 	$(MANAGE) migrate
+
+test:
+	$(MANAGE) test
