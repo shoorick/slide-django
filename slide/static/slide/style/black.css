@@ -35,3 +35,17 @@ a:visited {
   font-family: Montserrat,sans-serif !important;
   font-weight: 600 !important;
 }
+
+.remark-code-span-highlighted, .remark-code-line-highlighted {
+  background-color: rgba(255,153,0,0.5);
+}
+
+.hljs-ir-black .hljs-comment .remark-code-line-highlighted,
+.hljs-ir-black .hljs-quote   .remark-code-line-highlighted,
+.hljs-ir-black .hljs-meta    .remark-code-line-highlighted,
+.hljs-ir-black .hljs-comment .remark-code-span-highlighted,
+.hljs-ir-black .hljs-quote   .remark-code-span-highlighted,
+.hljs-ir-black .hljs-meta    .remark-code-span-highlighted {
+  background: #f90;
+  color: #000;
+}
