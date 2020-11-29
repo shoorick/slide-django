@@ -17,7 +17,7 @@
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js" type="text/javascript"></script>
     <script type="text/javascript">
-      var slideshow = remark.create();
+      var slideshow = remark.create({% autoescape off %}{{ options }}{% endautoescape %});
     </script>
   </body>
 </html>

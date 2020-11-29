@@ -1,5 +1,5 @@
+import json
 from django.shortcuts import get_object_or_404, render
-
 from .models import Slideshow
 
 def index(request):
@@ -9,4 +9,10 @@ def index(request):
 
 def show(request, slug):
     slideshow = get_object_or_404(Slideshow, slug=slug)
-    return render(request, 'slide/show.html', {'slideshow': slideshow})
+
+    try:
+        options = slideshow.options['remark'] # TODO Replace 'remark' with name of current engine
+    except KeyError:
+        options = {}
+
+    return render(request, 'slide/show.html', {'slideshow': slideshow, 'options': json.dumps(options)})
