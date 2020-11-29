@@ -9,10 +9,22 @@ def index(request):
 
 def show(request, slug):
     slideshow = get_object_or_404(Slideshow, slug=slug)
+    engine = 'remark' # TODO Replace 'remark' with name of current engine
 
-    try:
-        options = slideshow.options['remark'] # TODO Replace 'remark' with name of current engine
-    except KeyError:
+    options = slideshow.user.profile.options
+    if options is None:
         options = {}
 
-    return render(request, 'slide/show.html', {'slideshow': slideshow, 'options': json.dumps(options)})
+    try:
+        options.update(slideshow.options)
+    except TypeError:
+        pass
+
+    slideshow.options = options
+
+    try:
+        engine_options = options[engine]
+    except KeyError:
+        engine_options = {}
+
+    return render(request, 'slide/show.html', {'slideshow': slideshow, 'options': json.dumps(engine_options)})
