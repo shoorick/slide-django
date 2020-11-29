@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from hashlib import sha256
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%8a3-e9*z7j870qa_f&u#l4kk*)mde(k01uga%1l-i&0m&(1*e'
+SECRET_KEY = '$l!de.' + sha256(str(os.uname()).encode()).hexdigest()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
