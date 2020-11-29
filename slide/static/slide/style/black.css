@@ -21,8 +21,8 @@ a:visited {
 
 mark {
   background: #f90;
-  padding: 0 .25em;
-  margin: 0 -.25em;
+  padding: 0 .1em;
+  margin: 0 -.1em;
 }
 
 .remark-container, .remark-slide-content {
@@ -53,5 +53,10 @@ mark {
 .hljs-ir-black .hljs-quote   .remark-code-span-highlighted,
 .hljs-ir-black .hljs-meta    .remark-code-span-highlighted {
   background: #f90;
+  color: #000;
+}
+
+.inverse {
+  background: #fff;
   color: #000;
 }

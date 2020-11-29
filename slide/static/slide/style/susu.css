@@ -30,3 +30,18 @@ a:visited {
 .remark-toolbar, .remark-toolbar-timer, .remark-notes-area .remark-bottom-area .remark-toggle {
   font-family: 'Roboto',sans-serif !important;
 }
+
+.inverse {
+  background: #222324;
+  color: #eee;
+}
+.inverse h1, .inverse h2, .inverse h3 {
+  color: #fff;
+}
+
+.inverse mark {
+  margin: 0 -.1em;
+  padding: 0 .1em;
+  background: #900;
+  color: #fff;
+}

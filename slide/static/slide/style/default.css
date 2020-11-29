@@ -1,3 +1,16 @@
 body {
     font-family: sans-serif;
 }
+
+.inverse {
+  background: #000;
+  color: #fff;
+}
+
+.inverse a {
+  color: #69f;
+}
+
+.inverse a:visited {
+  color: #96f;
+}
