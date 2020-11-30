@@ -12,9 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'slide/style/' %}{{ slideshow.options.style|default:'default' }}.css">
   </head>
   <body>
-    <textarea id="source">
-      {% block content %}{% endblock %}
-    </textarea>
+    <textarea id="source">{% block content %}{% endblock %}</textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js" type="text/javascript"></script>
     <script type="text/javascript">
       var slideshow = remark.create({% autoescape off %}{{ options }}{% endautoescape %});
