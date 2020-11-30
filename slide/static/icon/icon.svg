@@ -16,9 +16,9 @@
    id="SVGRoot"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="icon.svg"
-   inkscape:export-filename="/home/as/prg/python/slide/slide/static/icon/180.png"
-   inkscape:export-xdpi="1080"
-   inkscape:export-ydpi="1080">
+   inkscape:export-filename="/home/as/prg/python/slide/slide/static/icon/64.png"
+   inkscape:export-xdpi="384"
+   inkscape:export-ydpi="384">
   <defs
      id="defs10" />
   <sodipodi:namedview
@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="18.776404"
-     inkscape:cx="4.5864023"
-     inkscape:cy="3.9802626"
+     inkscape:zoom="16"
+     inkscape:cx="3.6251457"
+     inkscape:cy="7.8715726"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -62,13 +62,13 @@
      id="layer1">
     <path
        style="opacity:1;vector-effect:none;fill:#e3e2db;fill-opacity:1;stroke:#6c6753;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 0.5,1.5 v 8 h 2 v 5 l 3,-3 h 10 v -8 h -8 l 1,-2 z"
+       d="m 1.5,1.5 v 8 h 2 v 5 l 3,-3 h 8 v -8 h -6 l 1,-2 z"
        id="rect25"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccccc" />
     <rect
        y="5"
-       x="11"
+       x="12"
        height="5"
        width="1"
        id="rect85"
@@ -78,11 +78,11 @@
        id="rect87"
        width="1"
        height="3"
-       x="9"
+       x="10"
        y="7" />
     <rect
        y="9"
-       x="7"
+       x="8"
        height="1"
        width="1"
        id="rect89"
