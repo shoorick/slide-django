@@ -62,3 +62,8 @@ mark {
 .x4 {
   font-size: 4em;
 }
+
+p img {
+  max-width: 100%;
+  height: auto;
+}

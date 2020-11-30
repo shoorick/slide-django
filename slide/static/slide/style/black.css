@@ -72,3 +72,8 @@ mark {
 .x4 {
   font-size: 4em;
 }
+
+.max-width-100-percent {
+  max-width: 100%;
+  height: auto;
+}
