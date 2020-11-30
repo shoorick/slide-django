@@ -5,3 +5,8 @@ __pycache__
 .komodotools
 activestate.yaml
 db.sqlite3
+.bash*
+.profile
+.selected_editor
+log
+static
