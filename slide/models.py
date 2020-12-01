@@ -11,8 +11,9 @@ class Slideshow(models.Model):
     user = models.ForeignKey(User, on_delete=models.PROTECT)
     date_published = models.DateTimeField(default=timezone.now)
     is_published = models.BooleanField(default=True)
-    source = models.TextField(verbose_name='Source code')
+    source = models.TextField(verbose_name='Source code', blank=True)
     options = models.JSONField(null=True, blank=True)
+    stylesheet = models.TextField(verbose_name='CSS rules', blank=True)
 
     def __str__(self):
         return self.name
