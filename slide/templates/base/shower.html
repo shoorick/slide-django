@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>{% block title %} Slideshow {% endblock %}</title>
+    <meta charset="{{ encoding|default:'utf-8' }}">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {% load static %}
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'icon/16.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'icon/32.png' %}">
+    <link rel="icon" type="image/png" sizes="160x160" href="{% static 'icon/160.png' %}">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="{% static 'icon/icon.svg' %}">
+    <link rel="apple-touch-icon" href="{% static 'icon/180.png' %}">
+
+    <link rel="stylesheet" href="https://shwr.me/shower/themes/{{ slideshow.options.style|default:'ribbon' }}/styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'slide/style/shower-' %}{{ slideshow.options.style|default:'ribbon' }}.css">
+    <style>{{ slideshow.stylesheet|safe }}</style>
+  </head>
+  <body class="shower list">
+
+    {% block content %}{% endblock %}
+
+    <div class="progress"><div></div></div>
+
+    <script src="https://shwr.me/shower/shower.js"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+{% extends 'base/shower.html' %}
+
+{% block content %}
+  <header class="caption">
+    <h1>
+      {% block title %}
+        {% if latest_slideshow_list %}
+          Most recent slideshows
+        {% else %}
+           No slideshows are available
+        {% endif %}
+      {% endblock %}
+    </h1>
+  </header>
+
+  <section class="slide return-to-list">
+    <div>
+      <a href="{% url 'index' %}">Return to list</a>
+      {% if latest_slideshow_list %}
+        <h2>Most recent slideshows</h2>
+          <ul>
+            {% for slideshow in latest_slideshow_list %}
+            <li>{{ slideshow.date_published|date:'d.m.Y, H:i' }}. [{{ slideshow.name }}]({% url 'show' slideshow.slug %})</li>
+            {% endfor %}
+          </ul>
+      {% else %}
+        <h2>No slideshows are available</h2>
+      {% endif %}
+    </div>
+  </section>
+
+{% endblock %}
