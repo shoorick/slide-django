@@ -9,4 +9,4 @@ db.sqlite3
 .profile
 .selected_editor
 log
-static
+/static
