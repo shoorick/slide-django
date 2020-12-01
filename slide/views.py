@@ -5,11 +5,10 @@ from .models import Slideshow
 def index(request):
     latest_slideshow_list = Slideshow.objects.order_by('-date_published')[:5]
     context = {'latest_slideshow_list': latest_slideshow_list}
-    return render(request, 'slide/index.html', context)
+    return render(request, 'remark/index.html', context) # TODO get from site wide config
 
 def show(request, slug):
     slideshow = get_object_or_404(Slideshow, slug=slug)
-    engine = 'remark' # TODO Replace 'remark' with name of current engine
 
     options = slideshow.user.profile.options
     if options is None:
@@ -20,6 +19,8 @@ def show(request, slug):
     except TypeError:
         pass
 
+    engine = options.get('engine', 'remark').replace('../', '') # TODO get from site wide config
+
     slideshow.options = options
 
     try:
@@ -27,4 +28,11 @@ def show(request, slug):
     except KeyError:
         engine_options = {}
 
-    return render(request, 'slide/show.html', {'slideshow': slideshow, 'options': json.dumps(engine_options)})
+    return render(
+        request,
+        f'{engine}/show.html',
+        {
+            'slideshow': slideshow,
+            'options': json.dumps(engine_options),
+        }
+    )

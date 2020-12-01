@@ -1,0 +1,15 @@
+{% extends 'base/shower.html' %}
+
+{% block content %}
+  <header class="caption">
+    <h1>{% block title %}{{ slideshow.name }}{% endblock %}</h1>
+    <p>{{ slideshow.user.first_name }} {{ slideshow.user.last_name }}</p>
+  </header>
+
+  {{ slideshow.source|safe }}
+
+  <footer class="slide return-to-list">
+    <a href="{% url 'index' %}">Return to list</a>
+  </footer>
+
+{% endblock %}
