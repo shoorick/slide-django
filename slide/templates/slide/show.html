@@ -2,10 +2,10 @@
 
 {% block title %}{{ slideshow.name }}{% endblock %}
 
-{% block content %}
-{{ slideshow.source }}
+{% block content %}{{ slideshow.source }}
 
 ---
+name: return-to-list
 
 [Return to list]({% url 'index' %})
 {% endblock %}
