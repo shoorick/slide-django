@@ -27,7 +27,10 @@ class Profile(models.Model):
     options = models.JSONField(null=True, blank=True)
 
     def __str__(self):
-        return ' '.join((self.user.first_name, self.user.last_name))
+        result = ' '.join((self.user.first_name, self.user.last_name))
+        if result == ' ':
+            result = self.user.username
+        return result
 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
