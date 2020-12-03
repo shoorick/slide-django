@@ -2,11 +2,17 @@ import json
 from django.shortcuts import get_object_or_404, render
 from .models import Slideshow
 
+'''
+Make list of available slideshows
+'''
 def index(request):
     latest_slideshow_list = Slideshow.objects.order_by('-date_published')[:5]
     context = {'latest_slideshow_list': latest_slideshow_list}
     return render(request, 'remark/index.html', context) # TODO get from site wide config
 
+'''
+Show certain slideshow identified by slug
+'''
 def show(request, slug):
     slideshow = get_object_or_404(Slideshow, slug=slug)
 
