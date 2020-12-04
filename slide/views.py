@@ -27,6 +27,11 @@ def show(request, slug):
 
     engine = options.get('engine', 'remark').replace('../', '') # TODO get from site wide config
 
+    if engine == 'cleaver':
+        slides, cleaver_options = slideshow.parse_cleaver_slides()
+        options.update(cleaver_options)
+        slideshow.slides = slides
+
     slideshow.options = options
 
     try:
