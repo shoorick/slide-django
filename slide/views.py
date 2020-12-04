@@ -29,7 +29,8 @@ def show(request, slug):
 
     if engine == 'cleaver':
         slides, cleaver_options = slideshow.parse_cleaver_slides()
-        options.update(cleaver_options)
+        default_cleaver_options = {'controls': True, 'progress': True, 'encoding': 'utf-8'}
+        options = {**default_cleaver_options, **options, **cleaver_options}
         slideshow.slides = slides
 
     slideshow.options = options
