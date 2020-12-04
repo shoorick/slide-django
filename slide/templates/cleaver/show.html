@@ -10,7 +10,7 @@
 
 {% for slide in slideshow.slides %}
   <div class="slide{% if slide.hidden %} hidden{% endif %}{% if slide.classes %} {{ slide.classes }}{% endif %}" id="slide-{{id}}">
-    <section class="slide-content">{{ slide.content }}</section>
+    <section class="slide-content">{{ slide.content|safe }}</section>
   </div>
 {% endfor %}
 
