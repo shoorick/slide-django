@@ -12,12 +12,24 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   background: #f8f8f8;
 }
 
+.codehilite .o {
+  color: #421;
+}
+
+.codehilite .c1,
+.codehilite .cm,
 .hljs-comment,
 .hljs-quote {
   color: #998;
   font-style: italic;
 }
 
+.codehilite .k {
+  color: #228;
+  font-weight: bold;
+}
+
+.codehilite .kd,
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-subst {
@@ -25,14 +37,43 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-weight: bold;
 }
 
-.hljs-number,
+.codehilite .mi {
+  color: #097;
+}
+
+.codehilite .mh {
+  color: #096;
+}
+
+.codehilite .mo {
+  color: #095;
+}
+
+.codehilite .mb {
+  color: #094;
+}
+
+.codehilite .mf,
+.hljs-number {
+  color: #088;
+}
+
+.codehilite .nv,
+.codehilite .nx,
 .hljs-literal,
 .hljs-variable,
 .hljs-template-variable,
 .hljs-tag .hljs-attr {
-  color: #008080;
+  color: #113;
 }
 
+.codehilite .s1 {
+  color: #d23;
+}
+.codehilite .s2 {
+  color: #d32;
+}
+.codehilite .s,
 .hljs-string,
 .hljs-doctag {
   color: #d14;
@@ -62,11 +103,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-weight: normal;
 }
 
+.codehilite .sr,
 .hljs-regexp,
 .hljs-link {
   color: #009926;
 }
 
+.codehilite .p,
 .hljs-symbol,
 .hljs-bullet {
   color: #990073;
@@ -96,4 +139,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 .hljs-strong {
   font-weight: bold;
+}
+
+.linenos {
+  color: #ccc;
 }

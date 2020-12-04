@@ -47,7 +47,8 @@ class Slideshow(models.Model):
                     'content': lines[1],
                 })
 
-        for slide in slides: slide['content'] = markdown.markdown(slide['content'])
+        for slide in slides:
+            slide['content'] = markdown.markdown(slide['content'], extensions=['fenced_code', 'codehilite'])
 
         return slides, options
 
