@@ -1,10 +1,16 @@
 import datetime
+import markdown
+import re
+import yaml
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+'''
+Slideshow
+'''
 class Slideshow(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=63, unique=True)
@@ -21,6 +27,35 @@ class Slideshow(models.Model):
     def was_published_recently(self):
         return self.date_published >= timezone.now() - datetime.timedelta(days=1)
 
+    def parse_cleaver_slides(self):
+        slides  = []
+        options = {}
+
+        for number, slide in enumerate(self.source.split('\n--')):
+            if number == 0:
+                content = slide.lstrip().split('\n\n', 2)
+
+                if re.search('^[^\n]+:', content[0]): # first line contains colon
+                    options = yaml.safe_load(content.pop(-1))
+
+                if ''.join(content).strip() != '': # non empty/whitespace
+                    slides.append({'content': '\n\n'.join(content)}) # use content as slide
+            else:
+                lines = slide.split('\n', 1)
+                slides.append({
+                    'classes': lines[0].strip,
+                    'content': lines[1],
+                })
+
+        for slide in slides:
+            slide['content'] = markdown.markdown(slide['content'], extensions=['fenced_code', 'codehilite'])
+
+        return slides, options
+
+
+'''
+User profile has one-to-one link to user
+'''
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     about = models.TextField(max_length=1024, blank=True)

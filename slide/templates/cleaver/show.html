@@ -1,0 +1,26 @@
+{% extends 'base/cleaver.html' %}
+{# https://github.com/jdan/cleaver/blob/master/templates/default.mustache #}
+
+{% block content %}
+{% if slideshow.options.progress %}
+  <div class="progress">
+    <div class="progress-bar"></div>
+  </div>
+{% endif %}
+
+{% for slide in slideshow.slides %}
+  <div
+    class="slide{% if slide.hidden %} hidden{% endif %}{% if slide.classes %} {{ slide.classes }}{% endif %}"
+    id="slide-{{ forloop.counter }}">
+    <section class="slide-content">{{ slide.content|safe }}</section>
+  </div>
+{% endfor %}
+
+{% if slideshow.options.controls %}
+  <div class="controls">
+    <div class="arrow prev"></div>
+    <div class="arrow next"></div>
+  </div>
+{% endif %}
+
+{% endblock %}

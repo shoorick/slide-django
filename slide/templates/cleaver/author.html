@@ -1,0 +1,29 @@
+{# see https://github.com/jdan/cleaver/blob/master/templates/author.mustache #}
+<div class="author">
+  <h1 class="name">{{ author.name }}</h1>
+  {% if author.twitter %}
+    <h3 class="twitter">
+      <a href="https://twitter.com/{{ author.twitter }}">{{ author.twitter }}</a>
+    </h3>
+  {% endif %}
+  {% if author.github %}
+    <h3 class="github">
+      <a href="https://github.com/{{ author.github }}">{{ author.github }}</a>
+    </h3>
+  {% endif %}
+  {% if author.weibo %}
+    <h3 class="weibo">
+      <a href="http://weibo.com/{{ author.weibo }}">{{ author.weibo }}</a>
+    </h3>
+  {% endif %}
+  {% if author.url %}
+    <h3 class="url">
+      <a href="{{ author.url }}">{{ author.url }}</a>
+    </h3>
+  {% endif %}
+  {% if author.email %}
+    <h3 class="email">
+      <a href="mailto:{{ author.email }}">{{ author.email }}</a>
+    </h3>
+  {% endif %}
+</div>

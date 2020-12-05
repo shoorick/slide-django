@@ -1,1 +1,4 @@
 django
+markdown
+pygments
+pyyaml
