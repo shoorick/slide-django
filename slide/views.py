@@ -1,5 +1,6 @@
 import json
 from django.shortcuts import get_object_or_404, render
+from django.template.response import TemplateResponse
 from .models import Slideshow
 
 '''
@@ -31,6 +32,16 @@ def show(request, slug):
         slides, cleaver_options = slideshow.parse_cleaver_slides()
         default_cleaver_options = {'controls': True, 'progress': True, 'encoding': 'utf-8'}
         options = {**default_cleaver_options, **options, **cleaver_options}
+
+        if options['author']:
+            t = TemplateResponse(request, f'{engine}/author.html', {'author': options['author']})
+            t.render()
+
+            slides.append({
+                'classes': 'hidden',
+                'content': t.rendered_content,
+            })
+
         slideshow.slides = slides
 
     slideshow.options = options
