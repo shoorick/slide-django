@@ -36,7 +36,7 @@ class Slideshow(models.Model):
                 content = slide.lstrip().split('\n\n', 2)
 
                 if re.search('^[^\n]+:', content[0]): # first line contains colon
-                    options = yaml.load(content.pop(-1))
+                    options = yaml.safe_load(content.pop(-1))
 
                 if ''.join(content).strip() != '': # non empty/whitespace
                     slides.append({'content': '\n\n'.join(content)}) # use content as slide
