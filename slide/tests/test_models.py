@@ -1,6 +1,6 @@
 from django.test import TestCase, Client
 
-from .models import Profile, Slideshow
+from ..models import Profile, Slideshow
 
 class ProfileModelTest(TestCase):
     def test_profile_has_str(self):
